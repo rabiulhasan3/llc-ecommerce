@@ -1,15 +1,15 @@
-# llc-ecommerce
+## llc-ecommerce
 LLC Ecommerce is open source ecommerce platform using Laravel.
 
-# Package Used
+## Package Used
 
-# Installation Guideline
+## Installation Guideline
 - Clone the repo.
 - Run `composer install`
 - Run `copy .env.example .env`
 - Run `php artisan migrate --seed`
 
-# Contribution Guideline
+## Contribution Guideline
 - Fork the repo.
 - Clone the repo localy
 - Run `git checkout dev`
