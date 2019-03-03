@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    public $guarded = [];
+    protected $guarded = [];
 
     public function parent_category(){
     	return $this->belongsTo(Category::class);
@@ -19,8 +19,5 @@ class Category extends Model
     public function product(){
     	return $this->hasMany(Product::class);
     }
-<<<<<<< HEAD
-=======
     
->>>>>>> hasan-dev
 }
