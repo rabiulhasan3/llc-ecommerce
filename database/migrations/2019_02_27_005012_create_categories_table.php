@@ -20,7 +20,10 @@ class CreateCategoriesTable extends Migration
             $table->string('banner', 128);
             $table->unsignedInteger('category_id')->default(0);
             $table->timestamps();
+<<<<<<< HEAD
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+=======
+>>>>>>> 10488c428358c5c2a417194b5d83a5db9add0a83
         });
     }
 
