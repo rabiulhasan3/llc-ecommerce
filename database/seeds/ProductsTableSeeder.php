@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Product;
 
 class ProductsTableSeeder extends Seeder
 {
@@ -11,9 +12,9 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\Product::class, 20)->create();
+        factory(Product::class, 20)->create();
 
-        $products = App\Models\Product::select('id')->get();
+        $products = Product::select('id')->get();
 
         foreach( $products as $product){
         	$product->addMediaFromUrl('https://lorempixel.com/640/480/?43997')
