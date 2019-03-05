@@ -3,7 +3,7 @@
               <p class="float-right">
                 <a href="#">Back to top</a>
               </p>
-              <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-              <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.3/getting-started/introduction/">getting started guide</a>.</p>
+              <p>&copy; {{ config('app.name') }} {{ date('Y') }}</p>
+              <p>Read Our <a href="#">Private privacy</a> or <a href="#">Contact Us</a>.</p>
             </div>
           </footer>
