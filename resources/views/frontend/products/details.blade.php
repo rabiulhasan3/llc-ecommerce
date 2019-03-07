@@ -22,9 +22,19 @@
 
                         <p class="price-detail-wrap">
                             <span class="price h3 text-warning">
-                                <span class="currency">BDT </span>
                                 <span class="num">
-                                   {{ $product->price }}
+                                        @if($product->sale_price && $product->sale_price > 0)
+                            
+                                        <small class="text-muted">
+                                            <strike>
+                                              BDT {{ $product->price }}
+                                            </strike> 
+                                            <br>
+                                            BDT {{ $product->sale_price }}
+                                      </small>
+                                    @else
+                                       <small class="text-muted">BDT {{ $product->price }}</small>
+                                    @endif
                                 </span>
                             </span>
                         </p> <!-- price-detail-wrap .// -->
@@ -39,10 +49,14 @@
                         </dl>
 
                         <hr>
-
+                        <form action="{{ route('cart.add')}}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->id}}">
                             <button type="submit" class="btn btn-lg btn-outline-secondary">
-                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                                <i class="fas fa-shopping-cart"></i> Add To Cart
                             </button>
+                          </form>
+
                     </article> <!-- card-body.// -->
                 </aside> <!-- col.// -->
             </div> <!-- row.// -->

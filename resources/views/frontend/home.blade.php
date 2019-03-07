@@ -26,14 +26,27 @@
                         </p>
                         <div class="d-flex justify-content-between align-items-center">
                           <div class="btn-group">
-
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                              Add To Cart
-                            </button>
-                            
+                            <form action="{{ route('cart.add')}}" method="post" enctype="multipart/form-data">
+                              @csrf
+                              <input type="hidden" name="product_id" value="{{ $product->id}}">
+                              <button type="submit" class="btn btn-sm btn-outline-secondary">
+                                  Add To Cart
+                                </button>
+                            </form>
                           </div>
+                          @if($product->sale_price && $product->sale_price > 0)
+                            
+                              <small class="text-muted">
+                                  <strike>
+                                    BDT {{ $product->price }}
+                                  </strike> 
+                                  <br>
+                                  BDT {{ $product->sale_price }}
+                            </small>
+                          @else
+                             <small class="text-muted">BDT {{ $product->price }}</small>
+                          @endif
 
-                          <small class="text-muted">BDT {{ $product->price }}</small>
                         </div>
                       </div>
                     </div>

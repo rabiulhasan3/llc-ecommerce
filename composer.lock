@@ -4,9 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-
-    "content-hash": "5de56473e27bb917ac6660be7e64c1cf",
-
+    "content-hash": "0fe72283f2bffcfcda6c688cd224d3b0",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2061,6 +2059,39 @@
                 "shell"
             ],
             "time": "2018-10-13T15:16:03+00:00"
+        },
+        {
+            "name": "rabiulhasan/contact",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rabiulhasan3/contact-package.git",
+                "reference": "562038d09f4424a7907da2de288e6cc693639ef5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rabiulhasan3/contact-package/zipball/562038d09f4424a7907da2de288e6cc693639ef5",
+                "reference": "562038d09f4424a7907da2de288e6cc693639ef5",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Hasan\\Contact\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "rabiulhasan3",
+                    "email": "rabiul.fci@gmail.com"
+                }
+            ],
+            "description": "This will send email to admin and save query in database.",
+            "time": "2019-03-06T10:37:56+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -5534,7 +5565,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "rabiulhasan/contact": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
