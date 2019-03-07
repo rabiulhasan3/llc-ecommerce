@@ -20,6 +20,11 @@ class Product extends Model implements HasMedia
     	});
     }
 
+    public function registerMediaCollections()
+    {
+        $this->addMediaCollection('products');
+    }
+
     public function category()
     {
     	return $this->hasOne(Category::class);
