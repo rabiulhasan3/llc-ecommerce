@@ -70,6 +70,7 @@
                   <a href="{{ route('cart.clear') }}" class="btn btn-danger">
                       Clear
                     </a>
+                    <a href="{{ route('cart.chekout') }}" class="btn btn-success">Checkout</a>
               </div>
               @endif
 

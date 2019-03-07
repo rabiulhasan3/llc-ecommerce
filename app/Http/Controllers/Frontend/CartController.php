@@ -31,6 +31,7 @@ class CartController extends Controller
         }
 
         $product = Product::findOrFail($request->input('product_id'));
+        
         $unit_price =  ($product->sale_price != null && $product->sale_price > 0)? $product->sale_price : $product->price ;
        
 
@@ -78,6 +79,10 @@ class CartController extends Controller
         return redirect()->back();
     }
 
+
+    public function checkout(){
+        return view('frontend.chekout');
+    }
 
 
 
