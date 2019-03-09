@@ -52,41 +52,43 @@
             </div>
 
             <div class="col-md-8 order-md-1">
+                @include('frontend.partials._message')
                 <h4 class="mb-3">Billing address</h4>
-                <form class="needs-validation" novalidate>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                    <label for="firstName">Customer Name</label>
-                    <input type="text" class="form-control"  name="customer_namer" value="{{ auth()->user()->name }}" required>
-                    
+                <form action="{{ route('order') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                        <label for="firstName">Customer Name</label>
+                        <input type="text" class="form-control"  name="customer_name" value="{{ auth()->user()->name }}" required>
+                        
+                        </div>
+                        <div class="col-md-6 mb-3">
+                        <label for="lastName">Customer Phone Number</label>
+                        <input type="text" class="form-control" name="customer_phone_number" value="{{ auth()->user()->phone_number }}" required>
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+                        </div>
                     </div>
-                    <div class="col-md-6 mb-3">
-                    <label for="lastName">Customer Phone Number</label>
-                    <input type="text" class="form-control" name="customer_phone_number" value="{{ auth()->user()->phone_number }}" required>
-                    <div class="invalid-feedback">
-                        Valid last name is required.
+            
+                    <div class="mb-3">
+                        <label for="username">Address</label>
+                        <textarea name="address" class="form-control" required></textarea>
                     </div>
-                    </div>
-                </div>
-        
-                <div class="mb-3">
-                    <label for="username">Address</label>
-                    <textarea name="address" class="form-control" required></textarea>
-                </div>
-        
-                <div class="row">
-                    <div class="col-md-5 mb-3">
-                        <label for="city">City</label>
-                        <input class="form-control" type="text" name="city" placeholder="City" required>
+            
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            <label for="city">City</label>
+                            <input class="form-control" type="text" name="city" placeholder="City" required>
+                        </div>
+
+                        <div class="col-md-5 mb-3">
+                            <label for="postal_code">Postal Code</label>
+                            <input class="form-control" type="text" name="postal_code" placeholder="Postal Code" required>
+                        </div>
                     </div>
 
-                    <div class="col-md-5 mb-3">
-                        <label for="postal_code">Postal Code</label>
-                        <input class="form-control" type="text" name="postal_code" placeholder="Postal Code" required>
-                    </div>
-                </div>
-
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
                 </form>
             </div>
             </div>  
