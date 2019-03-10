@@ -124,8 +124,11 @@ class CartController extends Controller
             ]);
         }
 
+        auth()->user()->notify( new OrderEmailNotification($order));
+
         session()->forget(['cart','total']);
         session()->flash('message','Order Places Successfully.');
+
         return redirect()->route('order.details',$order->id);
     }
 
