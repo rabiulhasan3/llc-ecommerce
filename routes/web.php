@@ -29,4 +29,14 @@ Route::group(['namespace'=>'Frontend'],function(){
 
     Route::get('register','AuthController@showRegisterForm')->name('register');
     Route::post('register','AuthController@processRegister');
+
+    Route::get('activate/{token}','AuthController@activate')->name('activate');
+
+    Route::group(['middleware'=>'auth'],function(){
+
+        Route::post('order','CartController@processorder')->name('order');
+
+        Route::get('profile','AuthController@profile')->name('profile');
+        Route::get('logout','AuthController@logout')->name('logout');
+    });
 });
