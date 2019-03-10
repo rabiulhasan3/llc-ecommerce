@@ -126,8 +126,14 @@ class CartController extends Controller
 
         session()->forget(['cart','total']);
         return redirect('/');
+    }
 
 
+    public function showOrder($id){
+        $data = [];
+        $data['orders'] = Order::findOrFail($id);
+        
+        return view('frontend.orders.details',$data);
     }
 
 

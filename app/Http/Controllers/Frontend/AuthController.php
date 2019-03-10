@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Notifications\RegistrationEmailNotification;
 use App\Models\User;
+use App\Models\Order;
 use Carbon\Carbon;
 
 class AuthController extends Controller
@@ -125,6 +126,14 @@ class AuthController extends Controller
         auth()->logout();
 
         return redirect('/');
+    }
+
+
+    public function profile(){
+        $data = [];
+        $data['orders'] = Order::where('user_id',auth()->user()->id)->get();
+        
+        return view('frontend.auth.profile',$data);
     }
 
 
