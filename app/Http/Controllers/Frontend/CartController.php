@@ -125,7 +125,8 @@ class CartController extends Controller
         }
 
         session()->forget(['cart','total']);
-        return redirect('/');
+        session()->flash('message','Order Places Successfully.');
+        return redirect()->route('order.details',$order->id);
     }
 
 
