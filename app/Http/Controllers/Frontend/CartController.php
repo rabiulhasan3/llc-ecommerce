@@ -131,7 +131,7 @@ class CartController extends Controller
 
     public function showOrder($id){
         $data = [];
-        $data['orders'] = Order::findOrFail($id);
+        $data['order'] = Order::findOrFail($id);
         
         return view('frontend.orders.details',$data);
     }
